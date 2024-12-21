@@ -1,9 +1,39 @@
+* {
+  font-family: "Gill Sans", sans-serif;
+}
+
 body {
   margin: 0;
 }
 
-#header {
+.header {
   height: 50px;
-  width: 100%;
-  background-color: red;
+  background-color: #1f6f94;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.money-manager {
+  font-size: 2rem;
+  color: white;
+}
+
+.header-buttons {
+  display: flex;
+}
+
+.header-buttons .button {
+  background-color: white;
+  border-radius: 3px;
+  font-size: 2rem;
+  color: #1f6f94;
+  cursor: pointer;
+}
+
+.header-buttons .username {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: white;
 }
