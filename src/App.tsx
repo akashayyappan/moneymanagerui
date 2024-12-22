@@ -8,6 +8,11 @@ import Header from './component/Header';
 import ProtectedRoute from './component/ProtectedRoute';
 import AuthProvider from './service/useAuth';
 import Statements from './component/Statements';
+import { ModuleRegistry, ClientSideRowModelModule } from 'ag-grid-community';
+
+ModuleRegistry.registerModules([
+  ClientSideRowModelModule,
+]);
 
 function App() {
   return (

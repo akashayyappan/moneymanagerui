@@ -6,6 +6,7 @@
     "@types/node": "^16.18.108",
     "@types/react": "^18.3.7",
     "@types/react-dom": "^18.3.0",
+    "ag-grid-react": "^33.0.3",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",

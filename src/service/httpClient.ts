@@ -10,6 +10,11 @@ export const clearAuthToken = () => {
   AUTH_TOKEN = undefined;
 }
 
+interface AxiosResponse<T> {
+  data: T,
+  message: string
+}
+
 const getConfig = () => {
   const headers = new AxiosHeaders();
   if (AUTH_TOKEN !== undefined) {
@@ -19,14 +24,14 @@ const getConfig = () => {
   return config;
 }
 
-export const get = async (url: string) => {
+export const get = async <T>(url: string): Promise<AxiosResponse<T>> => {
   const response = await axios.get(`${SERVICE_URL}${url}`, getConfig());
-  return response.data;
+  return response.data as AxiosResponse<T>;
 }
 
-export const post = async (url: string, data: any) => {
-  const response = await axios.post(`${SERVICE_URL}${url}`, data, getConfig());
-  return response.data;
+export const post = async <T>(url: string, data: any): Promise<AxiosResponse<T>> => {
+  const response = await axios.post<T>(`${SERVICE_URL}${url}`, data, getConfig());
+  return response.data as AxiosResponse<T>;
 }
 
 export const getUser = async (): Promise<iUSER | null> => {

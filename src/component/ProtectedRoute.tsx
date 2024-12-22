@@ -9,8 +9,6 @@ interface iProtectedRoute {
 function ProtectedRoute(props: iProtectedRoute) {
   const { user } = useAuth();
 
-  console.log('protected route user', user);
-
   if (!user) {
     return <Navigate to='/login' replace />;
   }
